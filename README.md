@@ -851,6 +851,11 @@ RDS is a managed service that makes it easy to set up, operate, and scale a rela
 - During a failover, the recovered former primary becomes the new secondary and the promoted secondary becomes primary. Once the original DB is recovered, there will be a sync process kicked off where the two DBs mirror each other once to sync up on the new data that the failed former primary might have missed out on.
 - You can force a failover for a Multi-AZ setup by rebooting the primary instance
 - With a Multi-AZ RDS configuration, backups are taken from the standby.
+- Amazon RDS automatically performs a failover in the event of any of the following:
+   - Loss of availability in primary Availability Zone.
+   - Loss of network connectivity to primary.
+   - Compute unit failure on primary.
+   - Storage failure on primary.
 
 
 ### RDS Read Replicas:
