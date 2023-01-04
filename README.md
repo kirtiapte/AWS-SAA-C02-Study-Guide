@@ -1617,13 +1617,13 @@ AWS Organizations is an account management service that enables you to consolida
 The following section includes services, features, and techniques that may appear on the exam. They are also extremely useful to know as an engineer using AWS. If the following items do appear on the exam, they will not be tested in detail. You'll just have to know what the meaning is behind the name. It is a great idea to learn each item in depth for your career's benefit, but it is not necessary for the exam.
 
 ### What is the Amazon Cognito? 
-- Before discussing Amazon Cognito, it is first important to understand what Web Identity Federation is. Web Identity Federation lets you give your users access to AWS resources after they have successfully authenticated into a web-based identity provider such as Facebook, Google, Amazon, etc. Following a successful login into these services, the user is provided an auth code from the identity provider which can be used to gain temporary AWS credentials.
-- Amazon Cognito is the Amazon service that provides Web Identity Federation. You don’t need to write the code that tells users to sign in for Facebook or sign in for Google on your application. Cognito does that already for you out of the box.
+- Before discussing Amazon Cognito, it is first important to understand what Web Identity Federation is. <b>Web Identity Federation lets you give your users access to AWS resources after they have successfully authenticated into a web-based identity provider such as Facebook, Google, Amazon, etc. Following a successful login into these services, the user is provided an auth code from the identity provider which can be used to gain temporary AWS credentials.</b>
+- <b>Amazon Cognito is the Amazon service that provides Web Identity Federation. You don’t need to write the code that tells users to sign in for Facebook or sign in for Google on your application. Cognito does that already for you out of the box.</b>
 - Once authenticated into an identity provider (say with Facebook as an example), the provider supplies an auth token. This auth token is then supplied to Cognito which responds with limited access to your AWS environment. You dictate how limited you would like this access to be in the IAM role.
 - Cognito's job is broker between your app and legitimate authenticators.
-- *Cognito User Pools* are user directories that are used for sign-up and sign-in functionality on your application. Successful authentication generates a JSON web token. Remember user pools to be user based. It handles registration, recovery, and authentication.
+- *Cognito User Pools* are user directories that are used for sign-up and sign-in functionality on your application. <b>Successful authentication generates a JSON web token.</b> Remember user pools to be user based. It handles registration, recovery, and authentication.
 - *Cognito Identity Pools* are used to allow users temp access to direct AWS Services like S3 or DynamoDB. Identity pools actually go in and grant you the IAM role.
-- SAML-based authentication can be used to allow AWS Management Console login for non-IAM users.
+- <b>SAML-based authentication can be used to allow AWS Management Console login for non-IAM users.</b>
 - In particular, you can use Microsoft Active Directory which implements Security Assertion Markup Language (SAML) as well.
 - You can use Amazon Cognito to deliver temporary, limited-privilege credentials to your application so that your users can access AWS resources. 
 - Amazon Cognito identity pools support both authenticated and unauthenticated identities. 
@@ -1631,14 +1631,14 @@ The following section includes services, features, and techniques that may appea
 - When you need to easily add authentication to your mobile and desktop app, think Amazon Cognito.
 
 ### What is AWS Resource Access Manager?
-- AWS Resource Access Manager (RAM) is a service that enables you to easily and securely share AWS resources with any AWS account or within your AWS Organization. You can share AWS Transit Gateways, Subnets, AWS License Manager configurations, and Amazon Route 53 Resolver rules resources with RAM.
+- AWS Resource Access Manager (RAM) is a service that <b>enables you to easily and securely share AWS resources with any AWS account or within your AWS Organization.</b> You can share AWS Transit Gateways, Subnets, AWS License Manager configurations, and Amazon Route 53 Resolver rules resources with RAM.
 - Many organizations use multiple accounts to create administrative or billing isolation, and to limit the impact of errors as part of the AWS Organizations service.
-- RAM eliminates the need to create duplicate resources in multiple accounts, reducing the operational overhead of managing those resources in every single account you own. 
+- <b>RAM eliminates the need to create duplicate resources in multiple accounts,</b> reducing the operational overhead of managing those resources in every single account you own. 
 - You can create resources centrally in a multi-account environment, and use RAM to share those resources across accounts in three simple steps: create a Resource Share, specify resources, and specify accounts.
 - RAM is available at no additional charge.
 
 ### What is Athena?
-- Athena is an interactive query service which allows you to interact and query data from S3 using standard SQL commands. This is beneficial for programmatic querying for the average developer. It is serverless, requires no provisioning, and you pay per query and per TB scanned. You basically turn S3 into a SQL supported database by using Athena. 
+- Athena is an <b>interactive query service which allows you to interact and query data from S3 using standard SQL commands.</b> This is beneficial for programmatic querying for the average developer. It is serverless, requires no provisioning, and you pay per query and per TB scanned. You basically turn S3 into a SQL supported database by using Athena. 
 - Example use cases:
   - Query logs that are dumped into S3 buckets as an alternative or supplement to the ELK stack
   - Setting queries to run business reports based off of the data regularly entering S3
@@ -1648,9 +1648,9 @@ The following section includes services, features, and techniques that may appea
 - To understand Macie, it is important to understand PII or Personally Identifiable Information:
   - Personal data used to establish an individual’s identity which can be exploited
   - Examples: Social Security number, phone number, home address, email address, D.O.B, passport number, etc.
-- Amazon Macie is an ML-powered security service that helps you prevent data loss by automatically discovering, classifying, and protecting sensitive data stored in Amazon S3. Amazon Macie uses machine learning to recognize sensitive data such as personally identifiable information (PII) or intellectual property, assigns a business value, and provides visibility into where this data is stored and how it is being used in your organization.
+- <b>Amazon Macie is an ML-powered security service that helps you prevent data loss by automatically discovering, classifying, and protecting sensitive data stored in Amazon S3.</b> Amazon Macie uses machine learning to recognize sensitive data such as personally identifiable information (PII) or intellectual property, assigns a business value, and provides visibility into where this data is stored and how it is being used in your organization.
 - You can be informed of detections via the Macie dashboards, alerts, or reporting.
-- Macie can also analyze CloudTrail logs to see who might have interacted with sensitive data.
+-<b> Macie can also analyze CloudTrail logs to see who might have interacted with sensitive data.</b>
 - Macie continuously monitors data access activity for anomalies, and delivers alerts when it detects risk of unauthorized access or inadvertent data leaks. 
 - Macie has ability to detect global access permissions inadvertently being set on sensitive data, detect uploading of API keys inside source code, and verify sensitive customer data is being stored and accessed in a manner that meets their compliance standards.
 
@@ -1669,39 +1669,39 @@ The following section includes services, features, and techniques that may appea
 - Also, you can configure Secrets Manager to automatically rotate the secret for you according to a schedule that you specify. This enables you to replace long-term secrets with short-term ones, which helps to significantly reduce the risk of compromise.
 
 ### What is AWS STS?
-- AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources. 
+- <b>AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources.</b>
 - Temporary security credentials work almost identically to the long-term access key credentials that your IAM users can use.
 - Temporary security credentials are short-term, as the name implies. They can be configured to last for anywhere from a few minutes to several hours. After the credentials expire, AWS no longer recognizes them or allows any kind of access from API requests made with them.
 
 ### What is OpsWorks?
-- AWS OpsWorks is a configuration management service that provides managed instances of Chef and Puppet. Chef and Puppet are automation platforms that allow you to use code to automate the configurations of your servers. 
+- <b>AWS OpsWorks is a configuration management service that provides managed instances of Chef and Puppet. Chef and Puppet are automation platforms that allow you to use code to automate the configurations of your servers. </b>
 - OpsWorks lets you use Chef and Puppet to automate how servers are configured, deployed, and managed across your Amazon EC2 instances or on-premises compute environments. 
 - OpsWorks has three offerings - AWS Opsworks for Chef Automate, AWS OpsWorks for Puppet Enterprise, and AWS OpsWorks Stacks.
 - AWS OpsWorks Stacks lets you manage applications and servers on AWS and on-premises. With OpsWorks Stacks, you can model your application as a stack containing different layers, such as load balancing, database, and application server.
 - OpsWorks Stacks  is complex enough for you to deploy and configure Amazon EC2 instances in each layer or connect to other resources such as Amazon RDS databases.
 
 ### What is Elastic Transcoder?
-- A media transcoder in the cloud. Basically, it is a service that converts media files from their original format to the media format specified whether for phones, tablets, PCs, etc.
+- <b>A media transcoder in the cloud. Basically, it is a service that converts media files from their original format</b> to the media format specified whether for phones, tablets, PCs, etc.
 - Because of the built-in support for different media types, you can trust that the resulting quality will be good.
 - With Elastic Transcoder, you pay per minute of the transcode job and the resolution of the finished work.
 
 ### What is AWS Directory Service?
-- AWS Directory Service provides multiple ways to use Amazon Cloud Directory and Microsoft Active Directory (AD) with other AWS services. 
+- <b>AWS Directory Service provides multiple ways to use Amazon Cloud Directory and Microsoft Active Directory (AD) with other AWS services. </b>
 - Directories store information about users, groups, and devices, and administrators use them to manage access to information and resources. 
 - AWS Directory Service provides multiple directory choices for customers who want to use existing Microsoft AD or Lightweight Directory Access Protocol (LDAP)–aware applications in the cloud. It also offers those same choices to developers who need a directory to manage users, groups, devices, and access.
 
 ### What is IoT Core?
-- AWS IoT Core is a managed cloud service that lets connected devices easily and securely interact with cloud applications and other devices. 
+- <b>AWS IoT Core is a managed cloud service that lets connected devices easily and securely interact with cloud applications and other devices. </b>
 - AWS IoT Core provides secure communication and data processing across different kinds of connected devices and locations so you can easily build IoT applications.
 
 ### What is AWS WorkSpaces?
-- Amazon WorkSpaces is a managed, secure Desktop-as-a-Service (DaaS) solution. You can use Amazon WorkSpaces to provision either Windows or Linux desktops in just a few minutes and quickly scale to provide thousands of desktops to workers across the globe. 
+- <b>Amazon WorkSpaces is a managed, secure Desktop-as-a-Service (DaaS) solution. You can use Amazon WorkSpaces to provision either Windows or Linux desktops in just a few minutes and quickly scale to provide thousands of desktops to workers across the globe.</b>
 - Amazon WorkSpaces helps you eliminate the complexity in managing hardware inventory, OS versions and patches, and Virtual Desktop Infrastructure (VDI), which helps simplify your desktop delivery strategy. 
 - With Amazon WorkSpaces, your users get a fast, responsive desktop of their choice that they can access anywhere, anytime, from any supported device.
 
 ### What is AWS Fargate?
 - AWS Fargate is a serverless compute engine for containers.
-- The Fargate launch type allows you to run your containerized applications without the need to provision and manage the backend infrastructure. Just register your task definition and Fargate launches the container for you. 
+- <b>The Fargate launch type allows you to run your containerized applications without the need to provision and manage the backend infrastructure. Just register your task definition and Fargate launches the container for you.</b>
 - It works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). 
 - Fargate makes it easy for you to focus on building your applications. It removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation by design.
 
@@ -1720,7 +1720,7 @@ The following section includes services, features, and techniques that may appea
 - Amazon EKS is integrated with many AWS services to provide scalability and security for your applications. These services include Elastic Load Balancing for load distribution, IAM for authentication, Amazon VPC for isolation, and AWS CloudTrail for logging.
 
 ### What does pilot light mean?
-- The term pilot light is often used to describe a disaster recovery scenario in which a minimal version of an environment is always running in the cloud. 
+- <b>The term pilot light is often used to describe a disaster recovery scenario in which a minimal version of an environment is always running in the cloud. </b>
 - The idea of the pilot light is an analogy that comes from the gas heater. In a gas heater, a small flame that’s always on and can quickly ignite the entire furnace to heat up a house. This scenario is similar to a backup-and-restore scenario.
 - For example, with AWS you can maintain a pilot light by configuring and running the most critical core elements of your system in AWS. When the time comes for recovery, you can rapidly provision a full-scale production environment around the critical core that has always been running.
 
@@ -1731,7 +1731,7 @@ The following section includes services, features, and techniques that may appea
 - CloudFormation and CodeDeploy (AWS's version of Jenkins) both support this deployment technique.
 
 ### What is Amazon Data Lifecycle Manager?
-- You can use Amazon Data Lifecycle Manager (Amazon DLM) to automate the creation, retention, and deletion of snapshots taken to back up your Amazon EBS volumes. 
+- <b>You can use Amazon Data Lifecycle Manager (Amazon DLM) to automate the creation, retention, and deletion of snapshots taken to back up your Amazon EBS volumes. </b>
 - Automating snapshot management helps you to:
   - Protect valuable data by enforcing a regular backup schedule.
   - Retain backups as required by auditors or internal compliance.
@@ -1740,20 +1740,20 @@ The following section includes services, features, and techniques that may appea
 
 ### What is Route Origin Authorization?
 - You can bring part or all of your public IPv4 address range from your on-premises network to your AWS account. You continue to own the address range, but AWS advertises it on the Internet. After you bring the address range to AWS, it appears in your account as an address pool. 
-- You can then create an Elastic IP address from your address pool and use it with your AWS resources, such as EC2 instances, NAT gateways, and Network Load Balancers. This is also called "Bring Your Own IP Addresses (BYOIP)".
+- You can then create an Elastic IP address from your address pool and use it with your AWS resources, such as EC2 instances, NAT gateways, and Network Load Balancers. This is also called <b>"Bring Your Own IP Addresses (BYOIP)".</b>
 - To ensure that only you can bring your address range to your AWS account, you must authorize Amazon to advertise the address range and provide proof that you own the address range.
-- The benefit of ROA is that you can migrate pre-existing applications to AWS without requiring your partners and customers to change their IP address whitelists.  
+- <b>The benefit of ROA is that you can migrate pre-existing applications to AWS without requiring your partners and customers to change their IP address whitelists. </b>
 
 ### What is Amazon MQ?
 - Amazon MQ is a managed message broker service that makes it easy to set up and operate message brokers in the cloud.
-- The service is used when migrating services and apps into the cloud from your on-prem which is how it differs from Amazon SQS.
+- <b>The service is used when migrating services and apps into the cloud from your on-prem which is how it differs from Amazon SQS.</b>
 - Amazon MQ supports durability-optimized brokers backed by Amazon EFS to support high availability and message durability, and throughput-optimized brokers backed by Amazon EBS to support high-volume applications that require low latency and high throughput.
 - You can easily move from any message broker to Amazon MQ because you don’t have to rewrite any messaging code in your applications.
 - Amazon MQ is suitable for enterprise IT pros, developers, and architects who are managing a message broker themselves–whether on-premises or in the cloud–and want to move to a fully managed cloud service without rewriting the messaging code in their applications.
 
 ### What is AWS Config?
-- AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. Config continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations.
-- With Config, you can review changes in configurations and relationships between AWS resources, dive into detailed resource configuration histories, and determine your overall compliance against the configurations specified in your internal guidelines. This enables you to simplify compliance auditing, security analysis, change management, and operational troubleshooting.
+- <b>AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. Config continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations.</b>
+- With Config, you can review changes in configurations and relationships between AWS resources, dive into detailed resource configuration histories, and determine your overall compliance against the configurations specified in your internal guidelines. <b>This enables you to simplify compliance auditing, security analysis, change management, and operational troubleshooting.</b>
 - AWS Config allows you to do the following: ·        
   - Evaluate your AWS resource configurations for desired settings. ·         
   - Get a snapshot of the current configurations of the supported resources that are associated with your AWS account. ·        
